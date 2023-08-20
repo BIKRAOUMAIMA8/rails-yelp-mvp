@@ -1,6 +1,11 @@
-<ol>
+<div class = "container mt-d">
+<h1>All Restaurants</h1>
+<br>
+<ol class = "list-group">
 <% @restaurants.each do |restaurant| %>
-<li><%= link_to restaurant.name, restaurant_path(restaurant) %></li>
+<div id="list"><li class = "group-list-item"><%= link_to restaurant.name, restaurant_path(restaurant) %></li></div>
 <% end %>
 </ol>
-<%= link_to "create restaurant", new_restaurant_path %>
+<br>
+<button id="list" class="btn btn-dark"><%= link_to "create restaurant", new_restaurant_path %></button>
+</div>

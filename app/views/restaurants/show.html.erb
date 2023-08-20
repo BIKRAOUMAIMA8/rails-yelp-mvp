@@ -1,3 +1,15 @@
+<div class="container mt-5">
 <h2><%= @restaurant.name %></h2>
 <p><%= @restaurant.address %></p>
-<%= link_to "all restaurants", restaurants_path %>
+<p><strong>Reviews</strong></p>
+<ul class="list-group">
+<% @restaurant.reviews.each do |review| %>
+<div id="list"> <li class="list-group-item"><%= review.content %> <%= review.rating %></li></div>
+<% end %>
+</ul>
+<br>
+<button id="list"class="btn btn-dark"><%= link_to "reviews", new_restaurant_review_path(@restaurant) %></button>
+<br>
+<br>
+<button id="list"class="btn btn-dark"><%= link_to "all restaurants", restaurants_path %></button>
+</div>
